@@ -56,9 +56,11 @@ example.
 ### More complex graphics
 
 The demo provided for usage of the `SelfBraillingWidget` only provides a summary view
-of how to handle very simple files and graphics. For more complex use cases, you may
-want to defer to the built-in Tactile Viewer, which supports a wide array of filetypes
-and offers more functionality. Otherwise, you may have to roll your own graphics implementation.
+of how to handle very simple files and graphics. For more complex use cases, use the
+`ImageViewerWidget` from the `KeySoftSDK-imageviewer` module, which displays PDF, SVG and
+raster images with zoom, pan and rotation built in. See the
+[image viewer tutorial](./image-viewer-widget.md). You may also defer to the built-in
+Tactile Viewer, or roll your own graphics implementation.
 
 See [SelfBraillingActivity](../../app/src/main/java/com/humanware/keysoftsdkdemoapp/ui/SelfBraillingActivity.kt) for an example.
 

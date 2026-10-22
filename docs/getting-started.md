@@ -45,6 +45,20 @@ dependencyResolutionManagement {
 }
 ```
 
+## Optional modules
+
+The image viewer (`ImageViewerWidget`) is published as a separate artifact. Add it next to
+`KeySoftSDK` if your app displays PDF, SVG or raster images:
+
+```
+dependencies {
+    implementation 'com.humanware:KeySoftSDK:latest.release'
+    implementation 'com.humanware:KeySoftSDK-imageviewer:latest.release'
+}
+```
+
+See the [image viewer tutorial](./tutorials/image-viewer-widget.md) for details.
+
 ## Build configuration language
 
 Since using Kotlin DSL as a gradle scripting language has become the norm, two solutions are provided: Groovy DSL and Kotlin DSL. In this way, the gradle scripts of both build languages are bundled together:

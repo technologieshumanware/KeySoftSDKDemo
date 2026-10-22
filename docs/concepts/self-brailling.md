@@ -23,3 +23,4 @@ A common pattern is to keep one shared matrix state and push updates to both sur
 
 - **Learn it:** [Tutorial](../tutorials/self-brailling-widget.md), [Example](../examples/self-brailling.md)
 - **See it in code:** [SelfBraillingActivity.kt](../../app/src/main/java/com/humanware/keysoftsdkdemoapp/ui/SelfBraillingActivity.kt)
+- **Related concept:** [Image Viewer](./image-viewer.md), for displaying PDF, SVG and raster images without building the dots matrix yourself

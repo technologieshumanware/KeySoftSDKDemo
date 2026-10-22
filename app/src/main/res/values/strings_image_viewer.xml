@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="image_viewer">View images and documents</string>
+    <string name="image_viewer_sample_bitmap">Bitmap image (BMP)</string>
+    <string name="image_viewer_sample_svg">Vector image (SVG)</string>
+    <string name="image_viewer_sample_pdf">Multi-page document (PDF)</string>
+    <string name="image_viewer_open_from_storage">Open a file from storage</string>
+    <string name="image_viewer_no_document">Unable to open the document.</string>
+</resources>
