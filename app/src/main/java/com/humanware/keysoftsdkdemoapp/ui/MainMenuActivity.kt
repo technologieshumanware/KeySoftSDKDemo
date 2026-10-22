@@ -68,6 +68,7 @@ class MainMenuActivity : AbstractMenuActivity() {
             setNext(makeAccessibleItem(demoR.string.settings_info))
             setNext(makeAccessibleItem(demoR.string.textview_examples))
             setNext(makeAccessibleItem(demoR.string.burger_checklist))
+            setNext(makeAccessibleItem(demoR.string.image_viewer))
 
             setOnItemClickListener { _, _, position, _ ->
                 val targetActivity = when (position) {
@@ -79,6 +80,7 @@ class MainMenuActivity : AbstractMenuActivity() {
                     5 -> SettingsInfoActivity::class.java
                     6 -> TextViewActivity::class.java
                     7 -> CheckListActivity::class.java
+                    8 -> ImageViewerMenuActivity::class.java
                     else -> throw NotImplementedError("Invalid menu item.")
                 }
                 startActivity(Intent(this@MainMenuActivity, targetActivity))

@@ -28,6 +28,7 @@ This page is the central entry point for the KeySoftSDK Demo App documentation.
    Read core SDK concepts before diving into implementation details.
    - [Contextual menu](./docs/concepts/context-menu.md)
    - [Dialogs](./docs/concepts/dialogs.md)
+   - [Image Viewer](./docs/concepts/image-viewer.md)
    - [Menu](./docs/concepts/menu.md)
    - [Self Brailling](./docs/concepts/self-brailling.md)
    - [Settings](./docs/concepts/settings.md)
@@ -39,11 +40,13 @@ This page is the central entry point for the KeySoftSDK Demo App documentation.
 
 - [Context menu example](./docs/examples/context-menu.md)
 - [Dialogs example](./docs/examples/dialogs.md)
+- [Image viewer example](./docs/examples/image-viewer.md)
 - [Translation example](./docs/examples/translation.md)
 
 ## Tutorials
 
 - [Dialogs tutorial](./docs/tutorials/dialogs.md)
+- [Image viewer widget tutorial](./docs/tutorials/image-viewer-widget.md)
 - [Self-brailling widget tutorial](./docs/tutorials/self-brailling-widget.md)
 - [Settings tutorial](./docs/tutorials/settings.md)
 - [Shortcut tutorial](./docs/tutorials/shortcut.md)
@@ -53,6 +56,7 @@ This page is the central entry point for the KeySoftSDK Demo App documentation.
 - Create a context menu
 - Create a shortcut
 - Use the self-brailling widget
+- View images and documents (PDF, SVG, bitmaps) with the image viewer widget
 - See various dialog samples
 - Translate input to and from Braille
 - Test sound and vibration behavior

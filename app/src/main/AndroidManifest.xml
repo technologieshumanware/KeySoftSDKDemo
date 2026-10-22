@@ -18,6 +18,14 @@
             android:exported="false">
         </activity>
         <activity
+            android:name=".ui.ImageViewerMenuActivity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".ui.ImageViewerActivity"
+            android:exported="false">
+        </activity>
+        <activity
             android:name=".ui.SelfBraillingContextMenuActivity"
             android:exported="false">
         </activity>

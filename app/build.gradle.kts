@@ -47,6 +47,8 @@ android {
 dependencies {
     implementation ("com.humanware:KeySoftSDK:latest.release")
     //implementation ("com.humanware:KeySoftSDK:0.0.1")
+    // Optional module providing ImageViewerWidget (PDF, SVG and raster image viewer).
+    implementation ("com.humanware:KeySoftSDK-imageviewer:latest.release")
     implementation ("androidx.appcompat:appcompat:1.6.1")
     implementation ("androidx.core:core-ktx:1.9.0")
     implementation ("androidx.activity:activity-ktx:1.6.1")
