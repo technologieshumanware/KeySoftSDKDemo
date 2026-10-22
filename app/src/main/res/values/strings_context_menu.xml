@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="context_menu_self_brailling">Self-brailling context menu</string>
+    <string name="context_menu_bitmaps">Display bitmap images</string>
+    <string name="context_menu_random">Display randomized dots</string>
+    <string name="context_menu_vertical_lines">Display vertical lines</string>
+</resources>

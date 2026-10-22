@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<keymapping>
+    <application package="com.humanware.keysoftsdkdemoapp">
+        <context viewIdResourceName="SelfBraillingWidget">
+            <action name="substitute">
+                <command commandId="action_zoom_in" finishComposing="true" param="168" string="context_menu_zoom_in">
+                    <key>ZoomIn</key>
+                </command>
+                <command commandId="action_zoom_out" convertToCharacter="true" finishComposing="true" param="169" savePanning="true" string="context_menu_zoom_out">
+                    <key>ZoomOut</key>
+                </command>
+                <command commandId="bitmaps" param="113|30" string="context_menu_bitmaps" convertToCharacter="true" savePanning="true">
+                    <key>Dots1289</key>
+                    <key>Ctrl+B</key>
+                </command>
+                <command commandId="random" param="113|59|46" string="context_menu_random" convertToCharacter="true" savePanning="true">
+                    <key>Dots123589</key>
+                    <key>Ctrl+Shift+R</key>
+                </command>
+                <command commandId="vertical_lines" param="113|50" string="context_menu_vertical_lines" convertToCharacter="true" savePanning="true">
+                    <key>Dots123689</key>
+                    <key>Ctrl+V</key>
+                </command>
+            </action>
+        </context>
+    </application>
+</keymapping>

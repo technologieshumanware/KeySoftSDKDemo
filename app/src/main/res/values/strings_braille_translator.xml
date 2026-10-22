@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="translator_activity_title">Braille translator</string>
+
+    <string name="braille_to_text">Braille to text</string>
+    <string name="text_to_braille">Text to braille</string>
+    <string name="translate">Translate</string>
+
+    <!-- Braille string for "Enter some Braille text here" -->
+    <string name="braille_arrow">⠫⠒⠒⠕</string>
+    <string name="braille_sample">⠠⠑⠝⠞⠑⠗ ⠎⠕⠍⠑ ⠠⠃⠗⠁⠊⠇⠇⠑ ⠞⠑⠭⠞ ⠓⠑⠗⠑</string>
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dialog_activity_title">Dialog samples</string>
+
+    <string name="simple_dialog">Show simple dialog</string>
+    <string name="loading_dialog">Show loading dialog</string>
+    <string name="progress_dialog">Show progress dialog</string>
+    <string name="ok_dialog">Show OK dialog</string>
+    <string name="ok_cancel_dialog">Show OK/cancel dialog</string>
+    <string name="list_dialog">Show list dialog</string>
+
+    <string name="ok">OK</string>
+    <string name="simple_dialog_content">This is where the dialog you wish to display would go.</string>
+
+    <string name="ok_title">Title for OK dialog</string>
+    <string name="ok_only">You may only click OK on this dialog.</string>
+    <string name="ok_or_cancel">You may click OK or Cancel on this dialog.</string>
+
+    <string name="list_dialog_title">List dialog</string>
+    <string name="list_item_selected">You have selected %1$s from the list</string>
+    <string name="list_item_none_selected">Select an item before pressing Apply</string>
+    <string name="list_item_1">List item 1</string>
+    <string name="list_item_2">List item 2</string>
+    <string name="list_item_3">List item 3</string>
+    <string name="list_item_1_detail">First description</string>
+    <string name="list_item_2_detail">Second description</string>
+    <string name="list_item_3_detail">Third description</string>
+</resources>

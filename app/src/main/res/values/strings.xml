@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">KeySoft SDK Demo App</string>
+
+    <string name="quick_start">Quick start</string>
+    <string name="contextual_menu">Create a contextual menu</string>
+    <string name="shortcut">Create a shortcut</string>
+    <string name="self_brailling_widget">Use the self-brailling widget</string>
+    <string name="self_brailling_widget_visual_image">Use the self-brailling widget with a visual image</string>
+    <string name="accessible_dialog">See various dialog samples</string>
+    <string name="braille_translation">Translate input to Braille</string>
+    <string name="util_stuff">Util Stuff</string>
+    <string name="settings_info">Settings Info</string>
+    <string name="textview_examples">TextView Examples</string>
+    <string name="burger_checklist">Burger Checklist</string>
+    <string name="burger_ingredient_tomatoes">Tomatoes</string>
+    <string name="burger_ingredient_lettuce">Lettuce</string>
+    <string name="burger_ingredient_pickles">Pickles</string>
+    <string name="burger_ingredient_cheese">Cheese</string>
+    <string name="burger_state_empty">Your burger has no ingredients</string>
+    <string name="burger_state_with_ingredients">Your burger has: %1$s</string>
+    <string name="burger_customize_action">Customize burger</string>
+    <string name="burger_dialog_remove_ingredients_title">Remove ingredients</string>
+    <string name="common_done">Done</string>
+    <string name="common_cancel">Cancel</string>
+    <string name="burger_option_no_tomatoes">No tomatoes</string>
+    <string name="burger_option_no_lettuce">No lettuce</string>
+    <string name="burger_option_no_pickles">No pickles</string>
+    <string name="burger_option_no_cheese">No cheese</string>
+    <string name="annotation_burger">Burger</string>
+    <string name="annotation_sun">Sun</string>
+    <string name="simple_text_view">Simple Text View</string>
+    <string name="simple_text_view_message">Hello from a basic Kotlin activity.</string>
+    <string name="advance_configuration_title">Customize Your Burger</string>
+    <string name="quit">Quit</string>
+</resources>

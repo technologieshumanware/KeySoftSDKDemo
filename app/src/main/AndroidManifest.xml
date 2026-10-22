@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" package="com.humanware.keysoftsdkdemoapp">
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:name=".KeySoftSDKDemoApplication"
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        tools:targetApi="33">
+        <activity
+            android:name=".ui.SelfBraillingActivity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".ui.SelfBraillingActivityWithVisualImage"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".ui.SelfBraillingContextMenuActivity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".ui.BrailleTranslatorActivity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".ui.DialogSampleActivity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".ui.SoundAndVibrationActivity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".ui.SettingsInfoActivity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".ui.CheckListActivity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".ui.TextViewActivity"
+            android:exported="false"
+            android:theme="@style/Theme.KeySoftSDKDemoApp">
+        </activity>
+        <activity
+            android:name="com.humanware.keysoftsdk.ui.menu.SimpleAccessibleListViewActivity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".ui.MainMenuActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <provider
+            android:name="XmlResource"
+            android:authorities="com.humanware.keysoftsdkdemoapp.XmlResource"
+            android:grantUriPermissions="true"
+            android:exported="true">
+        </provider>
+    </application>
+</manifest>

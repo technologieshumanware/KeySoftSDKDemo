@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="util_activity_title">Util stuff</string>
+    <string name="util_play_error_beep">Play error beep</string>
+    <string name="util_vibrate_short">Vibrate (200 ms)</string>
+</resources>
+

@@ -1,0 +1,43 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+
+def tokenFromKeystore(String propertyKey) {
+    def token = ""
+    def keystorePropertyFile = file("keystore.properties")
+
+    if (keystorePropertyFile.exists()) {
+        def keystoreProperties = new Properties()
+        keystoreProperties.load(keystorePropertyFile.newDataInputStream())
+        if (keystoreProperties.containsKey(propertyKey)) {
+            token = keystoreProperties.getProperty(propertyKey)
+        }
+    }
+
+    return token
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        //mavenLocal()
+        google()
+        mavenCentral()
+        maven {
+            url gitlab_maven_repo_url
+            credentials(HttpHeaderCredentials) {
+                name = "Deploy-Token"
+                value = tokenFromKeystore("gitlab_maven_repo_deployToken")
+            }
+            authentication {
+                header(HttpHeaderAuthentication)
+            }
+        }
+    }
+}
+rootProject.name = "KeySoftSDK Demo App"
+include ':app'
