@@ -65,13 +65,7 @@ The `KeySoftSDK` object (`com.humanware.keysoftsdk.KeySoftSDK`) exposes the vers
 your app was built with, which is useful for logging or bug reports:
 
 ```kotlin
-val sdkVersion = KeySoftSDK.version
-```
-
-From Java:
-
-```java
-String sdkVersion = KeySoftSDK.getVersion();
+val sdkVersion = KeySoftSDK.getVersion()
 ```
 
 ## Build configuration language
