@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    One generated item of the main menu: MainMenuActivity inflates it once per entry of its
+    menuEntries list.
+
+    The text is the item's label: it is what KeySoft reads and what first letter navigation
+    matches, so MainMenuActivity sets it from the entry's string resource. The style gives the
+    look of the SDK's menu rows and makes the TextView clickable and focusable. It is shared with
+    the items declared in activity_main_menu, so both kinds look the same.
+-->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Widget.KeySoftSDKDemoApp.MenuItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />

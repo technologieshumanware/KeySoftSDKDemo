@@ -59,6 +59,21 @@ dependencies {
 
 See the [image viewer tutorial](./tutorials/image-viewer-widget.md) for details.
 
+## Checking the SDK version
+
+The `KeySoftSDK` object (`com.humanware.keysoftsdk.KeySoftSDK`) exposes the version of the SDK
+your app was built with, which is useful for logging or bug reports:
+
+```kotlin
+val sdkVersion = KeySoftSDK.version
+```
+
+From Java:
+
+```java
+String sdkVersion = KeySoftSDK.getVersion();
+```
+
 ## Build configuration language
 
 Since using Kotlin DSL as a gradle scripting language has become the norm, two solutions are provided: Groovy DSL and Kotlin DSL. In this way, the gradle scripts of both build languages are bundled together:

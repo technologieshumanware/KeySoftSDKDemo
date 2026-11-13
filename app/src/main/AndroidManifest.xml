@@ -54,10 +54,20 @@
             android:exported="false"
             android:theme="@style/Theme.KeySoftSDKDemoApp">
         </activity>
+        <!--
+            An AccessibleActivity needs no theme (KeySoftSDK 0.1.179 or later): without one, it
+            applies the SDK's AppCompatTheme. This screen sets the demo's theme to keep its action bar.
+        -->
+        <activity
+            android:name=".ui.AccessibleSampleActivity"
+            android:exported="false"
+            android:theme="@style/Theme.KeySoftSDKDemoApp">
+        </activity>
         <activity
             android:name="com.humanware.keysoftsdk.ui.menu.SimpleAccessibleListViewActivity"
             android:exported="false">
         </activity>
+
         <activity
             android:name=".ui.MainMenuActivity"
             android:exported="true">

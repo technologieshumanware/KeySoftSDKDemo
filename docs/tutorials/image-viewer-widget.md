@@ -106,12 +106,6 @@ thread after the screen and the Braille display have been updated:
 widget.onViewRefreshed = { updatePageLabel(widget.getCurrentPageIndex()) }
 ```
 
-### Keep the Braille display clean
-
-Showing Toasts, dialogs or popup windows over the viewer makes KeySoft announce the new
-window on the Braille display, replacing the image dots. Prefer logging, sounds or
-vibration for feedback while a document is displayed.
-
 See [ImageViewerActivity](../../app/src/main/java/com/humanware/keysoftsdkdemoapp/ui/ImageViewerActivity.kt) for an example.
 
 ## Related references

@@ -52,7 +52,7 @@ class DialogSampleActivity : AbstractMenuActivity() {
      * is used to place the items in the [listview] in any order, before the items
      * are eventually sorted.
      *
-     * @see MainMenuActivity for an example of layout sorted by position.
+     * @see ImageViewerMenuActivity for an example of layout sorted by position.
      *
      * @return an [AccessibleListView] item constructed from the specifications
      * in [sdkR.layout.accessible_listview_layout]
@@ -70,7 +70,7 @@ class DialogSampleActivity : AbstractMenuActivity() {
             // Notice the difference in order from how they were added to the [AccessibleListView].
             // This is due to the [AccessibleListView.Sort.BY_LABEL] in the [initialize] function.
             // To keep the order in which the items were added, use [AccessibleListView.Sort.BY_POSITION]
-            // as in [MainMenuActivity].
+            // as in [ImageViewerMenuActivity].
             setOnItemClickListener { _, _, position, _ ->
                 when (position) {
                     0 -> showLoadingDialog()
@@ -92,7 +92,7 @@ class DialogSampleActivity : AbstractMenuActivity() {
      * @param layoutId the id of the layout for the menu item
      * @param labelId the id of the label item
      *
-     * @return an [AccessibleItem] to be inserted in the main menu
+     * @return an [AccessibleItem] to be inserted in this menu
      */
     private fun makeAccessibleItem(
         labelNameId: Int,
