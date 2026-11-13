@@ -12,6 +12,7 @@
     <string name="settings_info">Settings Info</string>
     <string name="textview_examples">TextView Examples</string>
     <string name="burger_checklist">Burger Checklist</string>
+    <string name="accessible_activity_and_dialog">Accessible activity and dialog</string>
     <string name="burger_ingredient_tomatoes">Tomatoes</string>
     <string name="burger_ingredient_lettuce">Lettuce</string>
     <string name="burger_ingredient_pickles">Pickles</string>

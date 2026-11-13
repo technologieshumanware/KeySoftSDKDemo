@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Layout of MainMenuActivity, the launcher screen of the demo app.
+
+    This is an ordinary Android layout. AccessibleActivity adds first letter navigation and the
+    Home and End keys on top of it, as long as:
+    - the root is a ViewGroup, since the navigation walks it to find the items;
+    - every item has a label, its text or contentDescription, so FLN can match it.
+
+    The look follows the SDK's list based menus: a title bar, then one TextView per item.
+
+    The menu shows two ways to add an item. The user sees a single list:
+    - generated: MainMenuActivity inflates one item_main_menu per entry of its menuEntries list
+      into menu_items;
+    - declared: the TextViews at the end of the list are written here, the classic way, and
+      MainMenuActivity sets their click listeners through view binding.
+
+    The navigation follows the order of the views in this layout: the generated items, then the
+    declared ones.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_menu_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--
+        Menu title, outside the ScrollView so it stays on screen. Like the title of the SDK's menus,
+        it is hidden from accessibility, so it is not an FLN item either: Home goes to the first demo.
+    -->
+    <TextView
+        style="@style/Widget.KeySoftSDKDemoApp.MenuTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
+        android:text="@string/app_name" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- The dividers between the items are the ones a ListView draws, as in the SDK's menus. -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="?android:attr/listDivider"
+            android:orientation="vertical"
+            android:showDividers="middle">
+
+            <!-- Generated items: filled at runtime with one TextView per entry of MainMenuActivity.menuEntries. -->
+            <LinearLayout
+                android:id="@+id/menu_items"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="?android:attr/listDivider"
+                android:orientation="vertical"
+                android:showDividers="middle" />
+
+            <!--
+                Declared items, the classic approach. Each TextView has an id, so view binding
+                generates a field for it (binding.imageViewerItem, binding.accessibleSampleItem) and
+                MainMenuActivity only has to set its click listener. The text is the label KeySoft
+                reads and FLN matches.
+            -->
+            <TextView
+                android:id="@+id/image_viewer_item"
+                style="@style/Widget.KeySoftSDKDemoApp.MenuItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/image_viewer" />
+
+            <TextView
+                android:id="@+id/accessible_sample_item"
+                style="@style/Widget.KeySoftSDKDemoApp.MenuItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/accessible_activity_and_dialog" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

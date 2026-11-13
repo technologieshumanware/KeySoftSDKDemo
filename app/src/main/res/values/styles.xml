@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Main menu title. Same look as the title of the SDK's list based menus
+        (AbstractMenuActivity), so the main menu looks like the other menus of the app.
+    -->
+    <style name="Widget.KeySoftSDKDemoApp.MenuTitle" parent="">
+        <item name="android:gravity">center</item>
+        <item name="android:background">?attr/colorButtonNormal</item>
+        <item name="android:textColor">?attr/editTextColor</item>
+        <item name="android:textSize">32sp</item>
+    </style>
+
+    <!--
+        Main menu item: a TextView with the look of the SDK's one_textview row, the row used by the
+        original AbstractMenuActivity version of the menu. Both kinds of item use it, so they look
+        the same: the generated ones (item_main_menu) and the declared ones (activity_main_menu).
+
+        Unlike a Button, a TextView is neither clickable nor focusable by default, so both are set
+        here: clickable so the item can be activated, focusable so the arrow keys can reach it.
+    -->
+    <style name="Widget.KeySoftSDKDemoApp.MenuItem" parent="">
+        <item name="android:minHeight">105dp</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:gravity">center_vertical|start</item>
+        <item name="android:textSize">42sp</item>
+        <item name="android:textColor">?attr/editTextColor</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+</resources>

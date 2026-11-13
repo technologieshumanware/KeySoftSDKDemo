@@ -1,114 +1,119 @@
 package com.humanware.keysoftsdkdemoapp.ui
 
+import android.app.Activity
 import android.content.Intent
-import android.widget.TextView
-import com.humanware.keysoftsdk.ui.menu.AbstractMenuActivity
-import com.humanware.keysoftsdk.ui.menu.AccessibleListView
-import com.humanware.keysoftsdk.ui.menu.accessibleitem.AccessibleItem
-import com.humanware.keysoftsdk.ui.menu.accessibleitem.attributes.AccessibleItemAttributes
+import android.os.Bundle
+import androidx.annotation.StringRes
+import com.humanware.keysoftsdk.ui.menu.AccessibleActivity
+import com.humanware.keysoftsdkdemoapp.databinding.ActivityMainMenuBinding
+import com.humanware.keysoftsdkdemoapp.databinding.ItemMainMenuBinding
 import dagger.hilt.android.AndroidEntryPoint
-import com.humanware.keysoftsdk.R as sdkR
 import com.humanware.keysoftsdkdemoapp.R as demoR
 
 /**
- * Implements the main menu view of this demo app with a custom menu
- * defined using [AbstractMenuActivity].
+ * The launcher screen of this demo app: a menu with one item per demo.
  *
- * An [AbstractMenuActivity] contains two components:
- * - a [TextView], the title bar of the activity
- * - an [AccessibleListView], the view containing each clickable item
+ * It is built with [AccessibleActivity], the recommended base class for new screens. The menu is
+ * an ordinary layout, a title and a column of clickable TextViews styled like the rows of the
+ * SDK's list based menus. [AccessibleActivity] adds the KeySoft navigation on top of it:
+ * - first letter navigation: typing a letter moves the focus to the next item whose label starts
+ *   with it. For example, T moves to "Translate input to Braille", and T again to
+ *   "TextView Examples";
+ * - Home and End move the focus to the first and last item.
  *
- * @see sdkR.layout.sdk_settings_layout
+ * The menu shows two ways to add an item. The user sees a single list, and the navigation handles
+ * both kinds of item the same way:
+ * - **Declared in the layout**, the classic Android approach: the TextView is written in
+ *   [demoR.layout.activity_main_menu] with an id, and [onCreate] sets its click listener through
+ *   view binding. Simplest to read, and best for a few fixed items, or items that each do
+ *   something different.
+ * - **Generated from a list**: [menuEntries] lists demos, and [addMenuItem] inflates one
+ *   [demoR.layout.item_main_menu] per entry into the `menu_items` container. Best when many items
+ *   behave the same way, since adding one is a single line.
+ *
+ * To add a demo, use either approach, then declare the demo's activity in the manifest. Nothing
+ * else is needed: the navigation finds the new item by its label.
+ *
+ * This menu used to extend [AbstractMenuActivity](com.humanware.keysoftsdk.ui.menu.AbstractMenuActivity),
+ * with its content modelled as
+ * [AccessibleItem](com.humanware.keysoftsdk.ui.menu.accessibleitem.AccessibleItem)s in an
+ * [AccessibleListView](com.humanware.keysoftsdk.ui.menu.AccessibleListView) and clicks mapped to
+ * activities by position. [DialogSampleActivity] and [ImageViewerMenuActivity] still use that
+ * approach, which keeps working for existing list based menus.
+ *
+ * As for any [AccessibleActivity], call super when overriding onCreate, onResume, onPause or
+ * onKeyUp.
+ *
+ * The manifest declares no theme for this activity. [AccessibleActivity] then applies the SDK's
+ * AppCompatTheme, the theme of the SDK's list based menus, so this menu looks like them. This
+ * fallback requires KeySoftSDK 0.1.179 or later: earlier versions crash without an AppCompat theme.
+ *
+ * @see demoR.layout.activity_main_menu
+ * @see demoR.style.Widget_KeySoftSDKDemoApp_MenuItem for the look and behavior of an item
+ * @see AccessibleSampleActivity for a screen mixing text, buttons, a checkbox and dialogs
  */
 @AndroidEntryPoint
-class MainMenuActivity : AbstractMenuActivity() {
+class MainMenuActivity : AccessibleActivity(demoR.layout.activity_main_menu) {
 
     /**
-     * Gets the resource id for the menu's title.
+     * One demo listed in the generated part of the menu.
      *
-     * @return the resource id for the string corresponding to the menu's title
+     * @property labelId the item's text, which is also the label first letter navigation matches
+     * @property target the activity started when the item is pressed
      */
-    override fun getTitleId() = demoR.string.app_name
+    private data class MenuEntry(@StringRes val labelId: Int, val target: Class<out Activity>)
 
     /**
-     * Any initialization required to setup the menu items is found here.
+     * The demos generated from a list, in display order.
      *
-     * This is where you should define the sort strategy to use to sort
-     * the items displayed in the menu, which should be one of the
-     * enum values in [AccessibleListView.Sort].
-     *
-     * Will be called in the [AbstractMenuActivity.onCreate] method.
-     *
-     * @return the sort strategy for the menu elements
+     * The navigation follows the order of the views in the layout. The `menu_items` container
+     * comes before the declared items in [demoR.layout.activity_main_menu], so these demos are
+     * listed first.
      */
-    override fun initialize(): AccessibleListView.Sort {
-        listview = inflateSettingItemLayout()
+    private val menuEntries = listOf(
+        MenuEntry(demoR.string.self_brailling_widget, SelfBraillingActivity::class.java),
+        MenuEntry(demoR.string.self_brailling_widget_visual_image, SelfBraillingActivityWithVisualImage::class.java),
+        MenuEntry(demoR.string.accessible_dialog, DialogSampleActivity::class.java),
+        MenuEntry(demoR.string.braille_translation, BrailleTranslatorActivity::class.java),
+        MenuEntry(demoR.string.util_stuff, SoundAndVibrationActivity::class.java),
+        MenuEntry(demoR.string.settings_info, SettingsInfoActivity::class.java),
+        MenuEntry(demoR.string.textview_examples, TextViewActivity::class.java),
+        MenuEntry(demoR.string.burger_checklist, CheckListActivity::class.java),
+    )
 
-        return AccessibleListView.Sort.BY_POSITION
-    }
+    private lateinit var binding: ActivityMainMenuBinding
 
-    /**
-     * Inflates the [AccessibleListView] item in [sdkR.layout.sdk_settings_layout]
-     * to create a list of settings for the main menu.
-     *
-     * Because items are sorted by position as defined in [initialize], setNext is
-     * used to place items in order one after the other.
-     *
-     * @see DialogSampleActivity for an example of layout sorted by label.
-     *
-     * @return an [AccessibleListView] item constructed from the specifications in [sdkR.layout.accessible_listview_layout]
-     */
-    private fun inflateSettingItemLayout(): AccessibleListView {
-        return findViewById<AccessibleListView>(sdkR.id.settings_listview).apply {
-            setNext(makeAccessibleItem(demoR.string.self_brailling_widget))
-            setNext(makeAccessibleItem(demoR.string.self_brailling_widget_visual_image))
-            setNext(makeAccessibleItem(demoR.string.accessible_dialog))
-            setNext(makeAccessibleItem(demoR.string.braille_translation))
-            setNext(makeAccessibleItem(demoR.string.util_stuff))
-            setNext(makeAccessibleItem(demoR.string.settings_info))
-            setNext(makeAccessibleItem(demoR.string.textview_examples))
-            setNext(makeAccessibleItem(demoR.string.burger_checklist))
-            setNext(makeAccessibleItem(demoR.string.image_viewer))
+    override fun onCreate(savedInstanceState: Bundle?) {
+        // Sets the content view and creates the navigation, the views exist from here on.
+        super.onCreate(savedInstanceState)
+        binding = ActivityMainMenuBinding.bind(findViewById(demoR.id.main_menu_root))
 
-            setOnItemClickListener { _, _, position, _ ->
-                val targetActivity = when (position) {
-                    0 -> SelfBraillingActivity::class.java
-                    1 -> SelfBraillingActivityWithVisualImage::class.java
-                    2 -> DialogSampleActivity::class.java
-                    3 -> BrailleTranslatorActivity::class.java
-                    4 -> SoundAndVibrationActivity::class.java
-                    5 -> SettingsInfoActivity::class.java
-                    6 -> TextViewActivity::class.java
-                    7 -> CheckListActivity::class.java
-                    8 -> ImageViewerMenuActivity::class.java
-                    else -> throw NotImplementedError("Invalid menu item.")
-                }
-                startActivity(Intent(this@MainMenuActivity, targetActivity))
-            }
+        // Generated items: one TextView per entry, added to the menu_items container.
+        menuEntries.forEach { addMenuItem(it) }
+
+        // Declared items, the classic approach: the TextViews already exist in the layout, so
+        // only their click listeners are set here.
+        binding.imageViewerItem.setOnClickListener {
+            startActivity(Intent(this, ImageViewerMenuActivity::class.java))
+        }
+        binding.accessibleSampleItem.setOnClickListener {
+            startActivity(Intent(this, AccessibleSampleActivity::class.java))
         }
     }
 
     /**
-     * Creates an [AccessibleItem] to be displayed in the menu's [AccessibleListView].
+     * Adds an item for [entry] at the end of the `menu_items` container.
      *
-     * @param labelNameId the name of the item to be displayed
-     * @param layoutId the id of the layout for the menu item
-     * @param labelId the id of the label item
+     * Each item gets its own click listener, so there is no position to map back to an activity.
+     * Adding views at runtime needs no extra call either: the navigation rebuilds its items
+     * whenever the layout changes.
      *
-     * @return an [AccessibleItem] to be inserted in the main menu
+     * @param entry the demo the item opens
      */
-    private fun makeAccessibleItem(
-        labelNameId: Int,
-        layoutId: Int = sdkR.layout.one_textview,
-        labelId: Int = sdkR.id.textview
-    ): AccessibleItem {
-        return AccessibleItem(
-            AccessibleItemAttributes(
-                resources.getString(labelNameId),
-                layoutId,
-                labelId
-            )
-        )
+    private fun addMenuItem(entry: MenuEntry) {
+        val item = ItemMainMenuBinding.inflate(layoutInflater, binding.menuItems, false).root
+        item.setText(entry.labelId)
+        item.setOnClickListener { startActivity(Intent(this, entry.target)) }
+        binding.menuItems.addView(item)
     }
-
 }

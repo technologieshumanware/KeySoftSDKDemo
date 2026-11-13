@@ -3,8 +3,8 @@ package com.humanware.keysoftsdkdemoapp.ui
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import com.humanware.keysoftsdk.SimpleArrayAdapter
 import com.humanware.keysoftsdk.settings.SettingsInfoManager
+import com.humanware.keysoftsdk.ui.adapter.SimpleArrayAdapter
 import com.humanware.keysoftsdk.ui.menu.AbstractMenuActivity
 import com.humanware.keysoftsdk.ui.menu.AccessibleListView
 import com.humanware.keysoftsdk.ui.menu.SimpleAccessibleListViewActivity

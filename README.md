@@ -45,6 +45,7 @@ This page is the central entry point for the KeySoftSDK Demo App documentation.
 
 ## Tutorials
 
+- [Building a menu with AccessibleActivity](./docs/tutorials/accessible-activity-menu.md) (recommended starting point for new screens)
 - [Dialogs tutorial](./docs/tutorials/dialogs.md)
 - [Image viewer widget tutorial](./docs/tutorials/image-viewer-widget.md)
 - [Self-brailling widget tutorial](./docs/tutorials/self-brailling-widget.md)
@@ -53,6 +54,7 @@ This page is the central entry point for the KeySoftSDK Demo App documentation.
 
 ## Activities showcased in this demo
 
+- Build accessible screens and dialogs from ordinary layouts with `AccessibleActivity` and `AccessibleDialog` (the main menu itself is built with `AccessibleActivity`)
 - Create a context menu
 - Create a shortcut
 - Use the self-brailling widget
@@ -61,10 +63,6 @@ This page is the central entry point for the KeySoftSDK Demo App documentation.
 - Translate input to and from Braille
 - Test sound and vibration behavior
 - Read current KeySoft settings
-
-## Documentation backlog
-
-- [What’s missing / TODO docs](./docs/todo.md)
 
 ## References
 

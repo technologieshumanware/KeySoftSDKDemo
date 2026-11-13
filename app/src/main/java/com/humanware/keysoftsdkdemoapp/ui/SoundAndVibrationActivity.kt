@@ -1,7 +1,7 @@
 package com.humanware.keysoftsdkdemoapp.ui
 
 import android.os.Bundle
-import com.humanware.keysoftsdk.SimpleArrayAdapter
+import com.humanware.keysoftsdk.ui.adapter.SimpleArrayAdapter
 import com.humanware.keysoftsdk.ui.menu.AbstractMenuActivity
 import com.humanware.keysoftsdk.ui.menu.AccessibleListView
 import com.humanware.keysoftsdk.ui.menu.accessibleitem.AccessibleItem

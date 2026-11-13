@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="accessible_sample_title">Accessible activity sample</string>
+    <string name="accessible_sample_intro">Type a letter to jump to the next item starting with it. Home and End jump to the first and last item.</string>
+    <string name="accessible_sample_name_summary">Name: %1$s</string>
+    <string name="accessible_sample_name_not_set">not set</string>
+    <string name="accessible_sample_edit_name">Edit name</string>
+    <string name="accessible_sample_notifications">Receive notifications</string>
+    <string name="accessible_sample_terms">Open terms of use</string>
+
+    <string name="edit_name_title">Enter your name</string>
+    <string name="edit_name_hint">Your name</string>
+    <string name="edit_name_save">Save</string>
+
+    <string name="terms_title">Terms of use</string>
+    <string name="terms_purpose">Purpose. This text only exists to give the full screen dialog enough content to scroll.</string>
+    <string name="terms_navigation">Navigation. Type a letter to jump to the next paragraph starting with it, or press End to reach the Close button.</string>
+    <string name="terms_layout">Layout. Any view hierarchy works: the dialog walks every visible view that has a label.</string>
+    <string name="terms_dismissal">Dismissal. Press Close or Back to return to the previous screen.</string>
+    <string name="terms_close">Close</string>
+</resources>

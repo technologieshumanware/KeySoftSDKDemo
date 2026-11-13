@@ -2,9 +2,9 @@ package com.humanware.keysoftsdkdemoapp.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
+import com.humanware.keysoftsdk.ui.adapter.StableArrayAdapter
 import com.humanware.keysoftsdk.ui.menu.AbstractMenuActivity
 import com.humanware.keysoftsdk.ui.menu.AccessibleListView
-import com.humanware.keysoftsdk.ui.menu.StableArrayAdapter
 import com.humanware.keysoftsdk.ui.menu.accessibleitem.AccessibleItem
 import com.humanware.keysoftsdk.ui.menu.accessibleitem.GenericAccessibleItem
 import com.humanware.keysoftsdk.ui.menu.accessibleitem.IActionItem
